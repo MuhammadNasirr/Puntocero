@@ -10,11 +10,11 @@ const SignUp = () => {
 
       <div className="signUp">
         <div className="signUp_box">
-          <h2>Wellcom</h2>
+          <h2>Bienvenido</h2>
           <form onSubmit={(e) => e.preventDefault()} className="signUp_form">
-            <input type="text" placeholder="User" />
-            <input type="password" placeholder="Password" />
-            <button onClick={registor}>Sign Up </button>
+            <input type="text" placeholder="usuario" />
+            <input type="password" placeholder="contraseña" />
+            <button onClick={registor}>Regístrate </button>
           </form>
         </div>
       </div>
