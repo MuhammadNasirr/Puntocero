@@ -1,11 +1,11 @@
 .triangle {
-  height: 35vh;
+  height: 30vh;
   width: 100vw;
   background: #000080;
 }
 
 .registor_detail {
-  height: 65vh;
+  height: 70vh;
   width: 100vw;
   position: relative;
   display: flex;
@@ -37,7 +37,7 @@
 
 .detail {
   z-index: 999;
-  height: 300px;
+  height: 400px;
   width: 500px;
   display: flex;
   flex-direction: column;
@@ -55,11 +55,95 @@
   outline-width: 0;
   background: lightgray;
   border: none;
+  font-size: 14px ;
 }
 .career__cellPhone > input {
   padding: 10px 20px;
   outline-width: 0;
   background: lightgray;
   border: none;
-  margin: 0 5px;
+  font-size: 14px ;
+}
+.career__cellPhone :nth-child(1) {
+  margin-right: 5px;
+}
+
+.sumbit_btn {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #fff;
+  width: 100px;
+  align-self: center;
+  background: #000080;
+  border: none;
+  outline-width: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.sumbit_btn:hover {
+  background-color: #000080b8;
+}
+
+@media (max-width: 1200px) {
+  .detail_input > input {
+    font-size: 18px;
+  }
+  .career__cellPhone > input {
+    font-size: 18px;
+    padding: 10px 7px;
+  }
+
+  .sumbit_btn {
+    width: 50%;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 998px) {
+  .detail {
+    height: 500px;
+    padding: 0 10px;
+  }
+
+  .detail_input > input {
+    font-size: 18px;
+  }
+  .career__cellPhone > input {
+    font-size: 18px;
+    padding: 10px 7px;
+  }
+  .sumbit_btn {
+    width: 50%;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .triangle {
+    height: 23vh;
+  }
+  .registor_detail {
+    height: 75vh;
+    justify-content: space-around;
+  }
+  .detail {
+    height: 500px;
+    padding: 0 10px;
+  }
+  .detail_input {
+    padding: 0 10px;
+  }
+  .detail_input > input {
+    font-size: 20px;
+  }
+  .career__cellPhone > input {
+    margin: 8px 0;
+    width: 100%;
+  }
+
+  .sumbit_btn {
+    width: 100%;
+  }
 }

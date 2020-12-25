@@ -68,7 +68,7 @@
 }
 
 .signUp_form > button:hover {
-  background: #efef;
+  background: lightgray;
 }
 
 @media (max-width: 768px) {
