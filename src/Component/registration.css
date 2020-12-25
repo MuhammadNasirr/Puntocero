@@ -5,7 +5,7 @@
 }
 
 .registor_detail {
-  height: 70vh;
+  height: 100vh;
   width: 100vw;
   position: relative;
   display: flex;
@@ -37,8 +37,8 @@
 
 .detail {
   z-index: 999;
-  height: 400px;
-  width: 500px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,17 +55,25 @@
   outline-width: 0;
   background: lightgray;
   border: none;
-  font-size: 14px ;
+  font-size: 14px;
 }
 .career__cellPhone > input {
   padding: 10px 20px;
   outline-width: 0;
   background: lightgray;
   border: none;
-  font-size: 14px ;
+  font-size: 14px;
 }
 .career__cellPhone :nth-child(1) {
   margin-right: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 .sumbit_btn {
@@ -103,7 +111,6 @@
 
 @media (max-width: 998px) {
   .detail {
-    height: 500px;
     padding: 0 10px;
   }
 
@@ -125,11 +132,9 @@
     height: 23vh;
   }
   .registor_detail {
-    height: 75vh;
     justify-content: space-around;
   }
   .detail {
-    height: 500px;
     padding: 0 10px;
   }
   .detail_input {
