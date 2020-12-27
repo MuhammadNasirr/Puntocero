@@ -10,7 +10,6 @@ import { auth } from "./Component/config/firebase";
 function App() {
   auth.onAuthStateChanged((user) => {
     if (user) {
-      alert("you logged succesfully");
     } else {
       alert("login faild");
     }
@@ -19,10 +18,8 @@ function App() {
   return (
     <Router>
       <Switch>
-        <div className="App">
-          <Route exact path="/" component={Login} />
-          <Route path="/registor_form" component={Registration} />
-        </div>
+          <Route exact path="/login" component={Login} />
+          <Route path="/" component={Registration} />
       </Switch>
     </Router>
   );

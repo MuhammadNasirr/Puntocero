@@ -2,43 +2,49 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "./config/firebase";
 import "./Login.css";
-
+import BG from "./Assets/bg_logo.png";
 const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
 
   const signIn = () => {
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then((user) => {
-        console.log("logged in");
-      })
-      .catch((error) => {
-        alert(error.message);
-      });
-      
-      setpassword("")
-      setemail("")
+    if (!email == "" && !password == "") {
+      auth
+        .signInWithEmailAndPassword(email, password)
+        .then((user) => {
+          console.log("logged in");
+        })
+        .catch((error) => {
+          alert(error.code);
+        });
+
+      setpassword("");
+      setemail("");
+    } else {
+      alert("nnnn");
+    }
   };
 
   return (
-    <div>
-      <div className="triangle" />
+    <div className="login">
+      <div className="vawe_bg">
+        <img src={BG} alt="" />
+      </div>
 
-      <div className="signUp">
-        <div className="signUp_box">
+      <div className="sign_in">
+        <div className="sign_in_box">
           <h2>Wellcome</h2>
-          <form onSubmit={(e) => e.preventDefault()} className="signUp_form">
+          <form onSubmit={(e) => e.preventDefault()} className="sign_in_form">
             <input
               type="text"
               value={email}
-              placeholder="user name"
+              placeholder="Email"
               onChange={(e) => setemail(e.target.value)}
             />
             <input
-              type="password"
+              type="Password"
               value={password}
-              placeholder="password"
+              placeholder="Password"
               onChange={(e) => setpassword(e.target.value)}
             />
             <button onClick={signIn}>Sign In</button>

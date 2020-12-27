@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./registration.css";
+import BG from "./Assets/bg_logo.png";
 
 import { auth, db } from "./config/firebase";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 const Registration = () => {
   const [userName, setuserName] = useState("");
   const [email, setemail] = useState("");
@@ -12,6 +14,7 @@ const Registration = () => {
   const [phone, setphone] = useState("");
   const [career, setcareer] = useState("");
   const [generatedCode, setgeneratedCode] = useState(null);
+  const [loading, setloading] = useState(false);
 
   // Auto generatted Code function
   useEffect(() => {
@@ -30,23 +33,35 @@ const Registration = () => {
     setgeneratedCode(makeid(6));
   }, []);
 
+  // registor function sending data on firebase
+
   function registor() {
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((user) => {
-        var User = user.user;
-        db.ref("User/" + User.uid).set({
-          UserName: userName,
-          Email: User.email,
-          Major: major,
-          DoB: DoB,
-          Code: generatedCode,
+    setloading(true);
+    if (
+      !userName == "" &&
+      !phone == "" &&
+      !DoB == "" &&
+      !major == "" &&
+      !career == ""
+    ) {
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .then((user) => {
+          var User = user.user;
+          db.ref("User/" + User.uid).set({
+            UserName: userName,
+            Email: User.email,
+            Major: major,
+            DoB: DoB,
+            Code: generatedCode,
+          });
+        })
+        .catch((error) => {
+          alert(error.message);
+          setloading(false);
+          // ..
         });
-      })
-      .catch((error) => {
-        alert(error.message);
-        // ..
-      });
+    }
 
     setemail("");
     setDoB("");
@@ -60,12 +75,15 @@ const Registration = () => {
 
   return (
     <div className="registor">
-      <div className="triangle" />
+      <div className="vawe_bg_registor">
+        <img src={BG} alt="" />
+      </div>
       <div className="registor_detail">
         <div className="detail">
           <h2>Completa tu registro</h2>
           <div className="detail_input">
             <input
+              className="user_name"
               type="text"
               value={userName}
               placeholder="Full name with capitle letters"
@@ -95,9 +113,6 @@ const Registration = () => {
               type="date"
               name="begin"
               placeholder="dd-mm-yyyy"
-              value=""
-              min="1997-01-01"
-              max="2030-12-31"
               value={DoB}
               onChange={(e) => setDoB(e.target.value)}
             />
@@ -116,7 +131,18 @@ const Registration = () => {
                 onChange={(e) => setphone(e.target.value)}
               />
             </div>
-            <button className="sumbit_btn" onClick={registor}>
+            <button
+              className="sumbit_btn"
+              onClick={registor}
+              disabled={loading}
+            >
+              {loading && (
+                <FontAwesomeIcon
+                  icon={faSpinner}
+                  pulse
+                  style={{ marginRight: 5, fontSize: 15 }}
+                />
+              )}
               Sumbit
             </button>
           </div>

@@ -1,65 +1,55 @@
-.triangle {
-  height: 35vh;
+.login {
   width: 100vw;
-  background: #000080;
+  display: flex;
+  flex-direction: column;
+}
+.vawe_bg {
+  height: 45vh;
+  width: 100%;
+}
+.vawe_bg > img {
+  object-fit: contain;
+  width: 100%;
+  pointer-events: none;
+  z-index: 999;
 }
 
-.signUp {
-  height: 65vh;
+.sign_in {
+  height: 55vh;
   width: 100vw;
   position: relative;
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.signUp::before {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 225px;
-  top: -10%;
-  left: 0;
-  background: #fff;
-  transform: skewY(10deg);
-  border-top-right-radius: 100px;
-}
-.signUp::after {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 225px;
-  top: -10%;
-  right: 0;
-  background: #fff;
-  transform: skewY(-10deg);
-}
-
-.signUp_box {
+.sign_in_box {
   height: 80%;
+  width: 20%;
   z-index: 999;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
-.signUp_form {
+.sign_in_form {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 20px;
 }
 
-.signUp_form > input {
+.sign_in_form > input {
   padding: 10px 20px;
   outline-width: 0;
   background: lightgray;
   border: none;
+  margin: 10px 0;
 }
 
-.signUp_form > button {
+.sign_in_form > button {
   outline-width: 0;
   border: none;
   padding: 10px 0;
@@ -67,7 +57,7 @@
   transition: ease-in-out 0.1s;
 }
 
-.signUp_form > button:hover {
+.sign_in_form > button:hover {
   background: lightgray;
 }
 .registor_link {
@@ -75,8 +65,20 @@
   display: flex;
 }
 
-@media (max-width: 768px) {
-  .signUp_box {
+@media (max-width: 992px) {
+  .sign_in_box {
+    width: 40%;
+  }
+
+  .sign_in_form {
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .sign_in_box {
+    width: 80%;
+  }
+
+}
+

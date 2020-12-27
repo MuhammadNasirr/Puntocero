@@ -1,44 +1,32 @@
-.triangle {
-  height: 30vh;
-  width: 100vw;
-  background: #000080;
+.registor {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.vawe_bg_registor {
+  width: 100%;
+}
+.vawe_bg_registor > img {
+  object-fit: contain;
+  width: 100%;
+  pointer-events: none;
+  z-index: 999;
 }
 
 .registor_detail {
+  margin-top: 10px;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.registor_detail::before {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 225px;
-  top: -10%;
-  left: 0;
-  background: #fff;
-  transform: skewY(10deg);
-  border-top-right-radius: 100px;
-}
-.registor_detail::after {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 225px;
-  top: -10%;
-  right: 0;
-  background: #fff;
-  transform: skewY(-10deg);
-}
-
 .detail {
   z-index: 999;
   width: 100%;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +35,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .detail_input > input {
@@ -56,6 +44,11 @@
   background: lightgray;
   border: none;
   font-size: 14px;
+  border-radius: 10px;
+}
+
+.detail_input > .user_name {
+  text-transform: capitalize;
 }
 .career__cellPhone > input {
   padding: 10px 20px;
@@ -63,6 +56,7 @@
   background: lightgray;
   border: none;
   font-size: 14px;
+  border-radius: 10px;
 }
 .career__cellPhone :nth-child(1) {
   margin-right: 5px;
@@ -79,51 +73,33 @@ input[type="number"] {
 .sumbit_btn {
   padding: 10px 0;
   font-size: 14px;
-  color: #fff;
+  color: #424949;
   width: 100px;
   align-self: center;
-  background: #000080;
+  background: lightgray;
   border: none;
   outline-width: 0;
-  border-radius: 10px;
+  border-radius: 5px;
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
 }
 .sumbit_btn:hover {
-  background-color: #000080b8;
+  background-color: rgb(232, 232, 232);
 }
 
-@media (max-width: 1200px) {
-  .detail_input > input {
-    font-size: 18px;
-  }
-  .career__cellPhone > input {
-    font-size: 18px;
-    padding: 10px 7px;
-  }
-
-  .sumbit_btn {
-    width: 50%;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 998px) {
+@media (max-width: 992px) {
   .detail {
     padding: 0 10px;
   }
 
   .detail_input > input {
-    font-size: 18px;
   }
   .career__cellPhone > input {
-    font-size: 18px;
     padding: 10px 7px;
   }
   .sumbit_btn {
     width: 50%;
-    font-size: 18px;
   }
 }
 
@@ -140,9 +116,9 @@ input[type="number"] {
   .detail_input {
     padding: 0 10px;
   }
-  .detail_input > input {
-    font-size: 20px;
-  }
+  /* .detail_input > input {
+    font-size: px;
+  } */
   .career__cellPhone > input {
     margin: 8px 0;
     width: 100%;
