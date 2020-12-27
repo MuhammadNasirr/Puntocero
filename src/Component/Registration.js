@@ -13,7 +13,7 @@ const Registration = () => {
   const [DoB, setDoB] = useState("");
   const [phone, setphone] = useState("");
   const [career, setcareer] = useState("");
-  const [generatedCode, setgeneratedCode] = useState(null);
+  const [generatedCode, setgeneratedCode] = useState("");
   const [loading, setloading] = useState(false);
 
   // Auto generatted Code function

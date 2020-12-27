@@ -14,8 +14,7 @@
 }
 
 .registor_detail {
-  margin-top: 10px;
-  height: 100vh;
+  margin: 10px 0;
   width: 100%;
   position: relative;
   display: flex;
@@ -26,13 +25,11 @@
 .detail {
   z-index: 999;
   width: 100%;
-  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .detail_input {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -40,6 +37,7 @@
 
 .detail_input > input {
   padding: 10px 20px;
+  margin: 15px 0;
   outline-width: 0;
   background: lightgray;
   border: none;
@@ -83,6 +81,7 @@ input[type="number"] {
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
+  margin: 15px 0;
 }
 .sumbit_btn:hover {
   background-color: rgb(232, 232, 232);
@@ -91,9 +90,6 @@ input[type="number"] {
 @media (max-width: 992px) {
   .detail {
     padding: 0 10px;
-  }
-
-  .detail_input > input {
   }
   .career__cellPhone > input {
     padding: 10px 7px;
@@ -112,19 +108,19 @@ input[type="number"] {
   }
   .detail {
     padding: 0 10px;
+    
   }
   .detail_input {
     padding: 0 10px;
   }
-  /* .detail_input > input {
-    font-size: px;
-  } */
+ 
   .career__cellPhone > input {
-    margin: 8px 0;
+    margin: 15px 0;
     width: 100%;
   }
 
   .sumbit_btn {
     width: 100%;
+    margin: 15px 0;
   }
 }
