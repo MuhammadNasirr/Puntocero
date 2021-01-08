@@ -1,0 +1,15 @@
+.vawe_bg {
+  width: 100%;
+}
+.vawe_bg > img {
+  object-fit: contain;
+  width: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+@media (max-width: 768px) {
+  .vawe_bg {
+    height: 20vh;
+  }
+}

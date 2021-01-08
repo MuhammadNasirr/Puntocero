@@ -6,8 +6,10 @@ import BG from "./Assets/bg_logo.png";
 const Login = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
+  const [error, seterror] = useState(null);
 
-  const signIn = () => {
+  const signIn = (e) => {
+    e.preventDefault()
     if (!email == "" && !password == "") {
       auth
         .signInWithEmailAndPassword(email, password)
@@ -15,7 +17,8 @@ const Login = () => {
           console.log("logged in");
         })
         .catch((error) => {
-          alert(error.code);
+          // seterror(error)
+          alert(error.message)
         });
 
       setpassword("");
@@ -33,24 +36,26 @@ const Login = () => {
 
       <div className="sign_in">
         <div className="sign_in_box">
-          <h2>Wellcome</h2>
-          <form onSubmit={(e) => e.preventDefault()} className="sign_in_form">
+          <h2>bienvenida</h2>
+          <form onSubmit={signIn} className="sign_in_form">
             <input
               type="text"
               value={email}
               placeholder="Email"
               onChange={(e) => setemail(e.target.value)}
+              required
             />
             <input
               type="Password"
               value={password}
               placeholder="Password"
               onChange={(e) => setpassword(e.target.value)}
+              required
             />
-            <button onClick={signIn}>Sign In</button>
+            <button>registrarse</button>
           </form>
           <div className="registor_link">
-            <p>not have account ?</p>
+            <p>no tener cuenta ?</p>
             <Link
               style={{
                 color: "blue",
@@ -61,7 +66,7 @@ const Login = () => {
               }}
               to="/registor_form"
             >
-              Registor Here
+              Regístrate
             </Link>
           </div>
         </div>

@@ -31,31 +31,28 @@ const Registration = () => {
       return result;
     }
     setgeneratedCode(makeid(6));
-  }, []);
+  }, [loading]);
 
   // registor function sending data on firebase
 
-  function registor() {
+  function registor(e) {
+    e.preventDefault();
     setloading(true);
-    if (
-      !userName == "" &&
-      !phone == "" &&
-      !DoB == "" &&
-      !major == "" &&
-      !career == ""
-    ) {
+    if (!userName == "") {
       auth
         .createUserWithEmailAndPassword(email, password)
-        .then((user) => {
+        .then(async (user) => {
           var User = user.user;
-          db.ref("User/" + User.uid).set({
+          await db.ref("User/" + User.uid).set({
             UserName: userName,
             Email: User.email,
+            Code: generatedCode,
             Major: major,
             DoB: DoB,
-            Code: generatedCode,
+            Phone: phone,
           });
         })
+        .then(() => (window.location = "/upload_image"))
         .catch((error) => {
           alert(error.message);
           setloading(false);
@@ -81,33 +78,38 @@ const Registration = () => {
       <div className="registor_detail">
         <div className="detail">
           <h2>Completa tu registro</h2>
-          <div className="detail_input">
+          <form onSubmit={registor} className="detail_input">
             <input
               className="user_name"
               type="text"
               value={userName}
-              placeholder="Full name with capitle letters"
+              placeholder="
+              Nombre completo con letras capitulares"
               onChange={(e) => setuserName(e.target.value)}
+              required
             />
             <input
               type="text"
               value={email}
               placeholder="Email"
               onChange={(e) => setemail(e.target.value)}
+              required
             />
             <input
               type="password"
               value={password}
-              placeholder="Create password"
+              placeholder="Crear contraseña"
               onChange={(e) => setpassword(e.target.value)}
+              required
             />
-            <input type="text" value={generatedCode} />
+            <input disabled type="text" value={generatedCode} required />
 
             <input
               type="text"
               value={major}
               onChange={(e) => setMajor(e.target.value)}
               placeholder="Major"
+              required
             />
             <input
               type="date"
@@ -115,27 +117,27 @@ const Registration = () => {
               placeholder="dd-mm-yyyy"
               value={DoB}
               onChange={(e) => setDoB(e.target.value)}
+              required
             />
 
             <div className="career__cellPhone">
               <input
                 type="text "
                 value={career}
-                placeholder="Career"
+                placeholder="Carrera"
+                required
                 onChange={(e) => setcareer(e.target.value)}
               />
               <input
                 type="number"
                 value={phone}
-                placeholder="Cell Phone"
+                placeholder="
+                Celular"
+                required
                 onChange={(e) => setphone(e.target.value)}
               />
             </div>
-            <button
-              className="sumbit_btn"
-              onClick={registor}
-              disabled={loading}
-            >
+            <button className="sumbit_btn" disabled={loading}>
               {loading && (
                 <FontAwesomeIcon
                   icon={faSpinner}
@@ -143,9 +145,9 @@ const Registration = () => {
                   style={{ marginRight: 5, fontSize: 15 }}
                 />
               )}
-              Sumbit
+              Enviar
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

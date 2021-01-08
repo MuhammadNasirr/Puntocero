@@ -1,0 +1,176 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.section_1 {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.section_1 > .user_img >  {
+  height: 200px;
+  width: 200px;
+}
+.section_1 > .user_img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.section_1 > .trade_mark {
+  height: 300px;
+  width: 300px;
+  background: lightgray;
+}
+
+.section_2 {
+  display: flex;
+  width: 50%;
+  align-self: start;
+  margin-left: 30px;
+}
+.section_2 > .triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 100px 100px 100px;
+  border-color: transparent transparent lightgray transparent;
+}
+
+.section_2 > .payment_section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.total_amount {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.total_diposit {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.total_amount > input {
+  background: lightgrey;
+  padding: 10px;
+  border: none;
+}
+.total_diposit > input {
+  background: lightgrey;
+  padding: 10px;
+  border: none;
+}
+
+.content > button {
+  align-self: flex-start;
+  margin-left: 50px;
+  padding: 10px 20px;
+  outline-width: 0;
+}
+
+@media (max-width: 992px) {
+  .content {
+    justify-content: space-evenly;
+  }
+  .section_1 {
+    flex-direction: row;
+    align-items: center;
+  }
+  .section_2 {
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-left: 0;
+  }
+  .payment_section {
+    align-items: center;
+    flex: 1;
+  }
+  .total_amount {
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .total_diposit {
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .content > button {
+    align-self: center;
+    margin-left: 0;
+  }
+  .section_1 > .user_img  {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.content > button {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 668px) {
+  .section_2 {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+
+  .total_amount {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+  }
+  .total_diposit {
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+  }
+  .total_amount > input {
+    width: 60%;
+  }
+  .total_diposit > input {
+    width: 60%;
+  }
+  .total_diposit > h3 {
+    margin: 10px 0;
+  }
+  .total_amount > h3 {
+    margin: 10px 0;
+  }
+
+  .section_1 {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
+
+  .section_1 > .user_img > img {
+    height: 100px;
+    width: 100px;
+  }
+  
+}
+
+@media (max-width: 440px) {
+  .total_amount > input {
+    width: 100%;
+  }
+  .total_diposit > input {
+    width: 100%;
+  }
+}

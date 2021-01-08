@@ -1,0 +1,28 @@
+.user_image_upload {
+  width: 100vw;
+}
+.content_1 {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.select_event > button {
+  width: 200px;
+  padding: 10px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .content_1 {
+    height: 500px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .select_event > button {
+    margin-top: 20px;
+  }
+}
