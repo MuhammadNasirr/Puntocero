@@ -108,7 +108,7 @@ const Registration = () => {
               type="text"
               value={major}
               onChange={(e) => setMajor(e.target.value)}
-              placeholder="Major"
+              placeholder="Ambassador Key"
               required
             />
             <input
@@ -124,15 +124,14 @@ const Registration = () => {
               <input
                 type="text "
                 value={career}
-                placeholder="Carrera"
+                placeholder="Major"
                 required
                 onChange={(e) => setcareer(e.target.value)}
               />
               <input
                 type="number"
                 value={phone}
-                placeholder="
-                Celular"
+                placeholder="Celular"
                 required
                 onChange={(e) => setphone(e.target.value)}
               />

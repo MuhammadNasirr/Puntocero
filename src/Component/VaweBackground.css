@@ -1,5 +1,6 @@
 .vawe_bg {
   width: 100%;
+  z-index: 0;
 }
 .vawe_bg > img {
   object-fit: contain;

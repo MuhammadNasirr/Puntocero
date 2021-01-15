@@ -13,16 +13,18 @@
   flex-wrap: wrap;
 }
 
-.section_1 > .user_img >  {
+.section_1>.user_img> {
   height: 200px;
   width: 200px;
 }
-.section_1 > .user_img > img {
+
+.section_1>.user_img>img {
   height: 100%;
   width: 100%;
   object-fit: contain;
 }
-.section_1 > .trade_mark {
+
+.section_1>.trade_mark {
   height: 300px;
   width: 300px;
   background: lightgray;
@@ -34,7 +36,8 @@
   align-self: start;
   margin-left: 30px;
 }
-.section_2 > .triangle {
+
+.section_2>.triangle {
   width: 0;
   height: 0;
   border-style: solid;
@@ -42,17 +45,19 @@
   border-color: transparent transparent lightgray transparent;
 }
 
-.section_2 > .payment_section {
+.section_2>.payment_section {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .total_amount {
   flex: 1;
   display: flex;
   justify-content: space-around;
   margin: 20px 0;
 }
+
 .total_diposit {
   flex: 1;
   display: flex;
@@ -60,22 +65,35 @@
   margin: 20px 0;
 }
 
-.total_amount > input {
-  background: lightgrey;
-  padding: 10px;
-  border: none;
-}
-.total_diposit > input {
+.total_amount>input {
   background: lightgrey;
   padding: 10px;
   border: none;
 }
 
-.content > button {
+.total_diposit>input {
+  background: lightgrey;
+  padding: 10px;
+  border: none;
+}
+
+.content>button {
   align-self: flex-start;
   margin-left: 50px;
   padding: 10px 20px;
   outline-width: 0;
+}
+
+.payment_button {
+  text-decoration: none;
+  color: black;
+}
+
+.signout {
+  color: black;
+  z-index: 1px;
+  right: 0;
+  margin-bottom: -10px;
 }
 
 @media (max-width: 992px) {
@@ -106,18 +124,18 @@
     justify-content: space-evenly;
     align-items: center;
   }
-  .content > button {
+  .content>button {
     align-self: center;
     margin-left: 0;
   }
-  .section_1 > .user_img  {
+  .section_1>.user_img {
     height: 150px;
     width: 150px;
   }
 }
 
-.content > button {
-    margin-bottom: 20px;
+.content>button {
+  margin-bottom: 20px;
 }
 
 @media (max-width: 668px) {
@@ -126,7 +144,6 @@
     align-items: center;
     margin-top: 30px;
   }
-
   .total_amount {
     flex-direction: column;
     align-items: center;
@@ -137,19 +154,18 @@
     width: 80%;
     align-items: center;
   }
-  .total_amount > input {
+  .total_amount>input {
     width: 60%;
   }
-  .total_diposit > input {
+  .total_diposit>input {
     width: 60%;
   }
-  .total_diposit > h3 {
+  .total_diposit>h3 {
     margin: 10px 0;
   }
-  .total_amount > h3 {
+  .total_amount>h3 {
     margin: 10px 0;
   }
-
   .section_1 {
     width: 80%;
     display: flex;
@@ -158,19 +174,17 @@
     flex-wrap: wrap;
     margin-top: 100px;
   }
-
-  .section_1 > .user_img > img {
+  .section_1>.user_img>img {
     height: 100px;
     width: 100px;
   }
-  
 }
 
 @media (max-width: 440px) {
-  .total_amount > input {
+  .total_amount>input {
     width: 100%;
   }
-  .total_diposit > input {
+  .total_diposit>input {
     width: 100%;
   }
 }
